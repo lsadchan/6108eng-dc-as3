@@ -1,0 +1,39 @@
+<%= Navigation("clubsessions") %>
+
+<div class="content">
+	<h1>Club Sessions</h1>
+	<p>
+		The club holds sessions for both Juniors and Adults and covers the full spectrum of ability, from first timers to seasoned racers. Everyone is welcome to join the club to ski. If you are a beginner then please check the diary for the start date of the next set of beginners lessons. 
+	</p>
+	<p>
+		As we are a members only club everyone must join prior to skiing (see costs below). This only takes a few minutes and can be done at your first visit. Please remember that we are a voluntary, none profit making organisation, so all money raised through membership is used for equipment, instructor training etc so everyone benefits. You will also receive discounts from various local sports shops. 
+	</p>
+	<br/>
+	<table class="table table-striped">
+	  <tr>
+	    <th>Audience</th>
+	    <th>Session Information</th>
+	    <th>Start Time</th>
+	    <th>End Time</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @sessions.each do |session| %>
+	  <tr>
+	    <td><%= session.audience %></td>
+	    <td><%= session.sessioninfo %></td>
+	    <td><%= session.starttime %></td>
+	    <td><%= session.endtime %></td>
+	    <td><%= link_to 'Show', session %></td>
+	    <td><%= link_to 'Edit', edit_session_path(session) %></td>
+	    <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
+	<br />
+	
+	<%= link_to 'Add New Session', new_session_path, :class => "blue-pill" %>
+</div>

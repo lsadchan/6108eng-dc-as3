@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  audience: MyText
+  sessioninfo: MyText
+  starttime: MyText
+  endtime: MyText
+
+two:
+  audience: MyText
+  sessioninfo: MyText
+  starttime: MyText
+  endtime: MyText

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  audience: MyText
+  session_info: MyText
+  club_s: MyText
+  club_e: MyText
+
+two:
+  audience: MyText
+  session_info: MyText
+  club_s: MyText
+  club_e: MyText

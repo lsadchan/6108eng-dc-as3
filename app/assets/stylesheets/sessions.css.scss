@@ -1,0 +1,30 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_session, .edit_session{
+  width:800px;
+  padding:10px;
+  border:1px solid #999;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin:0 auto;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#f-session-info{
+  float:right;
+}
+
+
+#f-session-info textarea{
+  width:500px;
+  height:202px;
+  resize:none;
+}
+
+#session-btn{
+  margin-left:-160px;
+}

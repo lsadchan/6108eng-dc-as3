@@ -1,0 +1,12 @@
+<%= Navigation("racingteam") %>
+
+<div class="content">
+<h4>Editing: <%= @racingteam.title %></h4>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @racingteam, :class  => 'blue-pill' %>
+<%= link_to 'Back', racingteams_path, :class  => 'blue-pill' %>
+</div>
+
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>

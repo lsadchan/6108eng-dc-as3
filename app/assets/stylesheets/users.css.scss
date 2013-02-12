@@ -1,0 +1,37 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-wrap{
+  width:600px;
+  padding:10px;
+  border:1px solid #999;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin:0 auto;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.new_user{
+  margin:0;
+}
+
+.new_user table tr td{
+  border:none;
+  text-align:center;
+  margin:0 !important;
+}
+
+.main-fields input{
+  width:507px;
+}
+
+#account-fields{
+  text-align:center;
+}
+
+.actions{
+ margin-left:160px; 
+}

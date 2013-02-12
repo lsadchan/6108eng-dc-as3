@@ -1,0 +1,43 @@
+.contact-info{
+  margin-bottom:0 !important;
+}
+
+.contact-info tr td{
+  border:none;
+}
+
+.contact-info h4{
+  color:#4BB1CF;
+  font-weight:500;
+}
+
+#contact-form{
+  width:380px;
+  text-align:center;
+}
+
+#contact-form textarea{
+  resize:vertical;
+}
+
+#contact-header tr td{
+  width:341px;
+  text-align:center;
+  font-weight:300;
+}
+
+.white-bar-top{
+  height:25px;
+  background:#F9F9F9;
+  text-align:center;
+  box-shadow:0 1px 2px #000;
+  margin-bottom:1px;
+}
+
+.white-bar-bottom{
+  height:25px;
+  background:#F9F9F9;
+  text-align:center;
+  box-shadow:0 -1px 2px #000;
+  margin-top:1px;
+}

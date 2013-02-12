@@ -1,0 +1,24 @@
+// Place all the styles related to the news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.new_news, .edit_news{
+  width:900px;
+  padding:10px;
+  border:1px solid #999;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin:0 auto;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.new_news textarea, .edit_news textarea{
+  width:885px;
+  height:300px;
+  resize:vertical;
+}
+
+.new_news .blue-pill, .edit_news .blue-pill{
+  margin-left:-160px;
+}

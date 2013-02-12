@@ -1,0 +1,29 @@
+<%= form_for(@racingteam) do |f| %>
+  <% if @racingteam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@racingteam.errors.count, "error") %> prohibited this racingteam from being saved:</h2>
+
+      <ul>
+      <% @racingteam.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "Announcement" %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+  	<%= f.label :tag_list %><br/>
+  	<%= f.text_field :tag_list %>
+  </div>
+  <div class="actions">
+    <%= f.submit(:value  => "Save Event", :class  => "blue-pill") %>
+  </div>
+<% end %>

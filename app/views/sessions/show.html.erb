@@ -1,0 +1,33 @@
+<%= Navigation("clubsessions") %>
+
+<div class="content">
+	<% if notice!=nil %>
+	<div class="alert alert-success">
+		<%= notice %>
+	</div>
+	<% end %>
+	<div class="para-wrap">
+	<p>
+		<strong>Audience:</strong>
+		<%= @session.audience %>
+	</p>
+
+	<p>
+		<strong>Session Information:</strong>
+		<%= @session.sessioninfo %>
+	</p>
+
+	<p>
+		<strong>Start Time:</strong>
+		<%= @session.starttime %>
+	</p>
+
+	<p>
+		<strong>End Time:</strong>
+		<%= @session.endtime %>
+	</p>
+	</div>
+	<br/>
+	<%= link_to 'Edit', edit_session_path(@session), :class  => "blue-pill" %>
+	<%= link_to 'Back', sessions_path, :class  => "blue-pill" %>
+</div>

@@ -1,0 +1,19 @@
+<%= Navigation() %>
+
+<div class="content">
+	<h1>Manage Anouncements</h1>
+	<br/>
+	<% @news.each do |news| %>
+	<h4><%= news.title %></h4>
+	<p>
+		<%= news.body.html_safe %>
+	</p>
+	<hr/>
+	<%= link_to 'Show', news %>
+	<%= link_to 'Edit', edit_news_path(news) %>
+	<%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<hr/>
+	<% end %>
+	<br />
+	<%= link_to 'Add New Announcement', new_news_path, :class => "blue-pill" %>
+</div>

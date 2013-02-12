@@ -1,0 +1,31 @@
+<%= Navigation("racingteam") %>
+
+<div class="content">
+	<h1>Do you want to race?</h1>
+	<p>
+		All members of the ski club are eligible to race. It's a great way to improve your skiing so if you are interested in racing then contact Tony, or any member of the team, who will provide you with the information you need.
+	</p>
+	<p>
+		Tony McClave, your race secretary works tirelessly behind the scenes to make the winter and summer racing possible. Tony can be seen down at the club for more information.
+	</p>
+	<h5>The races we enter...</h5>
+	<p>
+		We have members who race in the National league at various ski slopes across the country . We also organise teams to race at Stoke (in the summer), Sheffield (in the winter) and Pendle (also in the winter). Details for these local races can be found below.
+	</p>
+	<br/>
+	<% @racingteams.each do |racingteam| %>
+	<h3><%= racingteam.title %></h3>
+	<p><%= racingteam.body.html_safe %></p>
+	<p class="label label-info"><%= racingteam.tag_list %></p>
+	<hr/>
+	<%= link_to 'Show', racingteam %> | 
+	<%= link_to 'Edit', edit_racingteam_path(racingteam) %> |  
+	<%= link_to 'Destroy', racingteam, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<hr/>
+	<% end %>
+
+	<br/>
+	<br/>
+
+	<%= link_to 'Add New Event', new_racingteam_path, :class  => "blue-pill" %>
+</div>

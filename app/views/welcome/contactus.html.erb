@@ -1,0 +1,49 @@
+<%= Navigation() %>
+
+<div class="content">
+	<!--S-Contact Header-S-->
+	<table id="contact-header" class="table table-condensed contact-info">
+		<tr>
+			<td>
+				<h4>Post:</h4>
+				<p>Oval Ski Club, Oval Leisure Centre</p>
+				<p>Old Chester Road</p>
+				<p>Bebington, Wirral</p>
+				<p>Merseyside, CH63 7LF</p>
+			</td>
+			<td>
+				<h4>Email:</h4>
+				<a href="mailto:skienquiries@ovalskiclub.com">skienquiries@ovalskiclub.com</a>
+			</td>
+			<td>
+				<h4>Phone:</h4>
+				<p>John Wahlers (Chairman): 0151 645 2452</p>
+				<p>Belinda Dawson (Secretary): 0151 342 9756</p>
+			</td>
+		</tr>
+	</table>
+	<!--E-Contact Header-E-->
+	<!--S-Map-S-->
+	<div class="white-bar-top"><button class="btn btn-link" onclick="$('#map').collapse('toggle');"><span class="icon-chevron-down"> </span></button></div>
+	<div id="map">
+	<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=The+Oval+Leisure+Centre,+Old+Chester+Road,+Bebington&amp;aq=0&amp;oq=The+Oval+Leisure+Centre&amp;sll=54.610255,-2.329102&amp;sspn=7.411063,21.862793&amp;ie=UTF8&amp;hq=The+Oval+Leisure+Centre,+Old+Chester+Road,+Bebington&amp;t=m&amp;ll=53.361796,-3.009653&amp;spn=0.008964,0.043945&amp;z=15&amp;iwloc=A&amp;output=embed"> </iframe>
+	</div>
+	<div class="white-bar-bottom"><button class="btn btn-link" onclick="$('#map').collapse('toggle');"><span class="icon-chevron-up"> </span></button></div>
+	<!--E-Map-E-->
+	<!--S-Contact Form-S-->
+	<table class="table table-condensed contact-info">
+		<th class="bg-trans-black"><h4 style="padding-left:280px;">Contact Form:</h4></th>
+		<tr class="bg-trans-black">
+			<td style="padding-left:285px">
+				<form id="contact-form" method="post" action="">
+					<input type="text" class="span5" name="name" placeholder="Name" required="required" />
+					<input type="text" class="span5" name="email" placeholder="Email" required="required" />
+					<input type="text" class="span5" name="mobile" placeholder="Mobile" />
+					<textarea rows="10" class="span5" name="body"> </textarea>
+					<button class="blue-pill" type="submit" name="submit">Send</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<!--E-Contact Form-E-->
+</div>

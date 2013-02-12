@@ -1,0 +1,204 @@
+body{
+	height:auto;
+	min-height:100%;
+	font-family:'Raleway', Verdana !important;
+	font-size:11pt;
+	font-weight:300;
+	color:#666;
+	background:url("../assets/snow-mountain-bottom.png") no-repeat, url("../assets/gradient.jpg") repeat-x;
+	background-position: center top, left top;
+	margin:0;
+	padding:0;
+}
+
+h1,h3,h4{
+	color:#00acef !important;
+}
+
+.blue-pill{
+	color:#FFF !important;
+	background:rgb(0,172,239) !important;
+	border:1px solid rgb(0,172,239);
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:5px 10px 5px 10px;
+	text-align:center;
+}
+
+.blue-pill:hover, .blue-pill:active{
+	background:rgb(0,172,239) !important;
+	color:#FFF !important;
+}
+
+p{
+	font-family: 'Raleway', Verdana;
+	text-align:justify;
+}
+
+/****S**** Global Styles ****S****/
+
+.wrapper{
+	width:960px;
+	height:auto;
+	min-height:100%;
+	background:#FFF;
+	box-shadow: rgba(0, 0, 0, 0.046875) 0px 0px 0px 4px;
+	left:50%;
+	margin-left:-480px;
+	margin-right:auto;
+	overflow:hidden;
+	position:absolute;
+}
+
+.header{
+	width:100%;
+	height:70px;
+	background:#ffffff;
+	outline-color: rgb(114, 114, 114);
+	outline-style: none;
+	outline-width: 0px;
+	background-attachment: scroll;
+	background-clip: border-box;
+	box-shadow:0 1px 2px #999;
+	-moz-box-shadow: 0 1px 2px #999;
+	-webkit-box-shadow: 0 1px 2px #999;
+}
+
+.header h1{
+	font-size:20px !important;
+	font-weight:500;
+	margin:0;
+	padding:0;
+	line-height:3.5;
+	text-indent:20px;
+}
+
+.search-bar{
+	margin:20px 20px 0 0;
+	float:right;
+}
+
+#search-btn{
+	min-height:30px;
+}
+
+.navigation{
+	width:100%;
+	height:auto;
+	background:#ffffff;
+	outline-color: rgb(114, 114, 114);
+	outline-style: none;
+	outline-width: 0px;
+	background-attachment: scroll;
+	background-clip: border-box;
+	padding:10px;
+	margin-top:2px;
+	box-shadow:0 1px 2px #999;
+	-moz-box-shadow: 0 1px 2px #999;
+	-webkit-box-shadow: 0 1px 2px #999;
+}
+
+.navigation ul{
+	margin-bottom:0;
+	text-align:center;
+}
+
+.navigation .login-pill{
+	margin-left:315px;
+}
+
+.navigation ul li a{
+	color:#666;
+}
+
+.content{
+	width:940px;
+	height:auto;
+	min-height:600px;
+	background:#ffffff;
+	padding:10px;
+	overflow:hidden;
+	margin-bottom:35px;
+	box-shadow:0 1px 2px #999;
+	-moz-box-shadow: 0 1px 2px #999;
+	-webkit-box-shadow: 0 1px 2px #999;
+}
+
+.footer{
+	width:960px;
+	height:35px;
+	min-width:940px;
+	min-height:30px;
+	background:#FFF;
+	overflow:hidden;
+	bottom:0;
+	position:absolute;
+}
+
+.footer a{
+	color:#666;
+	font-size:9pt;
+	margin-right:20px;
+	line-height:3;
+	float:right;
+}
+
+.footer a:hover{
+	color:#666;
+	background:none;
+}
+
+.footer p{
+	color:#666;
+	font-size:9pt;
+	text-indent:20px;
+	line-height:3;
+}
+
+
+#new-articles{
+	margin-top:2px;
+	margin-bottom:2px;
+	box-shadow:0 1px 2px #999;
+	-moz-box-shadow: 0 1px 2px #999;
+	-webkit-box-shadow: 0 1px 2px #999;
+}
+
+#new-articles .item{
+	max-width:960px;
+	max-height:380px;
+	overflow:hidden;
+}
+
+#new-articles .carousel-control{
+	margin-top:10px;
+}
+
+.row-fluid h5{
+	border-bottom:2px solid #999;
+}
+
+.row-fluid .span4{
+	max-width:300px;
+}
+
+
+.para-wrap {
+	width: 900px;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#team-ul{
+	text-align:center;
+}
+
+#team-ul li{
+	background:rgba(255,255,255,0.8);
+}
+
+
+/****E**** Global Styles ****E****/

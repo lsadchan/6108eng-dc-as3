@@ -1,0 +1,7 @@
+<h1>Articles Tagged with <%= @tag.name %></h1>
+
+<ul>
+	<% @tag.racingteams.each do |racingteam| %>
+	<li><%= link_to racingteam.title, racingteam_path(racingteam) %></li>
+	<%end%>
+</ul>

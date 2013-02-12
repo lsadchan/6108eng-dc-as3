@@ -1,0 +1,17 @@
+<%= Navigation() %>
+
+<div class="content">
+	<% if notice!=nil %>
+	<div class="alert alert-success">
+		<%= notice %>
+	</div>
+	<% end %>
+	
+	<h4><%= @news.title %></h4>
+	<div class="para-wrap">
+	<p><%= @news.body.html_safe %></p>
+	</div>
+	<br/>
+	<%= link_to 'Edit', edit_news_path(@news), :class  => "blue-pill" %>
+	<%= link_to 'Back', news_index_path, :class  =>  "blue-pill" %>
+</div>
