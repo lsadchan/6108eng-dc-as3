@@ -19,3 +19,13 @@
 	background:none;
 	color:rgb(0,172,239);
 }
+
+
+.sidebar{
+	width:500px;
+	height:auto;
+	min-height:100%;
+	min-width:500px;
+	background:#FFF;
+	float:right;
+}

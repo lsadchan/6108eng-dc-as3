@@ -1,7 +1,8 @@
 class Racingteam < ActiveRecord::Base
+  has_attached_file :image, styles: {medium: "300x300>", thumb: "100x100>"}
   has_many :taggings
   has_many :tags, through: :taggings
-  attr_accessible :body, :title, :tag_list
+  attr_accessible :body, :title, :tag_list, :image
   
   def tag_list
     self.tags.collect do  |tag|

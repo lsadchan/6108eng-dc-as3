@@ -9,6 +9,9 @@
 	<h4> <%= @racingteam.title %> </h4>
 	<div class="para-wrap">
 	<p><%= @racingteam.body.html_safe %></p>
+	<% if @racingteam.image.exists? %>
+		<p><%= image_tag @racingteam.image.url(:thumb) %></p>
+	<% end %>
 	<p><%= tag_links(@racingteam.tags) %></p>
 	</div>
 	<br/>

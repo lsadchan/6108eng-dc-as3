@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212141825) do
+ActiveRecord::Schema.define(:version => 20130219131856) do
 
   create_table "clubsessions", :force => true do |t|
     t.text     "audience"
@@ -31,8 +31,12 @@ ActiveRecord::Schema.define(:version => 20130212141825) do
   create_table "racingteams", :force => true do |t|
     t.text     "title"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "sessions", :force => true do |t|
