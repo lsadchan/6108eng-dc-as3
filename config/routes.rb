@@ -1,17 +1,20 @@
 Osc::Application.routes.draw do
-  
+
+
   get "tags/index"
 
   get "tags/show"
 
-  match '/welcome', :controller  => 'welcome', :action  =>  'index'
-  match '/users/login', :controller => 'users', :action => 'login'
-  match '/users/register', :controller  => 'users', :action  =>  'new'
-  resources :users
   resources :sessions
   resources :news
   resources :racingteams
   resources :tags
+  resources :authors
+  resources :author_sessions, only: [ :new, :create, :destroy]
+  
+  match '/welcome', :controller  => 'welcome', :action  =>  'index'
+  match 'login' => 'author_sessions#new'
+  match 'logout' => 'author_sessions#destroy'
 
   root :to => 'welcome#index'
   get "welcome/index"

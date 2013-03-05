@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   helper_method :Navigation
-  def Navigation(n="home")
+  def Navigation(n="")
     
     home = ""
     learntoski = ""
@@ -22,17 +22,31 @@ class ApplicationController < ActionController::Base
       when "login" then login = "active"
     end
     
-    @nav = '<div class="navigation">
+    if logged_in?
+      @nav = '<div class="navigation">
+                <ul class="nav nav-pills">
+                <li class="'+home+'" ><a href="/welcome/index">Home</a></li>
+                <li class="'+learntoski+'" ><a href="/welcome/learntoski">Learn To Ski</a></li>
+                <li class="'+clubsessions+'" ><a href="/sessions">Club Sessions</a></li>
+                <li class="'+racingteam+'" ><a href="/racingteams">Racing Team</a></li>
+                <li class="'+aboutus+'" ><a href="/welcome/aboutus">About Us</a></li>
+                <li class="logout-pill '+login+'"><a href="/logout">Logout</a></li>
+                <li class="'+register+'" ><a href="/authors/new">Register</a></li>
+                </ul>
+              </div>'
+    else
+      @nav = '<div class="navigation">
               <ul class="nav nav-pills">
               <li class="'+home+'" ><a href="/welcome/index">Home</a></li>
               <li class="'+learntoski+'" ><a href="/welcome/learntoski">Learn To Ski</a></li>
               <li class="'+clubsessions+'" ><a href="/sessions">Club Sessions</a></li>
               <li class="'+racingteam+'" ><a href="/racingteams">Racing Team</a></li>
               <li class="'+aboutus+'" ><a href="/welcome/aboutus">About Us</a></li>
-              <li class="login-pill '+login+'"><a href="#">Login</a></li>
-              <li class="'+register+'" ><a href="/users/register">Register</a></li>
+              <li class="login-pill '+login+'"><a href="/login">Login</a></li>
+              <li class="'+register+'" ><a href="/authors/new">Register</a></li>
               </ul>
             </div>'
+    end
     
     return @nav.html_safe
   end

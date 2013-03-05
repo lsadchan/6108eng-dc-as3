@@ -108,6 +108,10 @@ p{
 	margin-left:315px;
 }
 
+.navigation .logout-pill{
+	margin-left:300px;
+}
+
 .navigation ul li a{
 	color:#666;
 }

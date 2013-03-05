@@ -30,7 +30,14 @@
 		<%= yield %>
 		<div class="footer">
 			<a href="/welcome/faqs">FAQs</a><a>|</a><a href="/welcome/aboutus">About Us</a><a>|</a><a href="/welcome/contactus">Contact Us</a>
-			<p>© OSC 2013</p>
+			<p>
+				© OSC 2013 &nbsp; | &nbsp;
+				<% if logged_in? %>
+			      <%= "Logged in as #{current_user.username}" %>
+			    <% else %>
+			      Logged out
+			    <% end %>			    
+		    </p>
 		</div>
 	</div>
 </body>
