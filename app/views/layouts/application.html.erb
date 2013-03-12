@@ -13,6 +13,7 @@
   <%= javascript_include_tag "bootstrap" %>
   <%= javascript_include_tag "bootstrap-transitions" %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 	<div class="sidebar">
@@ -30,6 +31,7 @@
 		<%= yield %>
 		<div class="footer">
 			<a href="/welcome/faqs">FAQs</a><a>|</a><a href="/welcome/aboutus">About Us</a><a>|</a><a href="/welcome/contactus">Contact Us</a>
+			<p><%= link_to image_tag('feedSmall.png'), racingteams_url(format: :atom) %></p>
 			<p>
 				© OSC 2013 &nbsp; | &nbsp;
 				<% if logged_in? %>

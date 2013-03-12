@@ -4,10 +4,10 @@ class RacingteamsController < ApplicationController
   def index
     @racingteams = Racingteam.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @racingteams }
-    end
+    # respond_to do |format|
+      # format.html # index.html.erb
+      # format.atom { render json: @racingteams }
+    # end
   end
 
   # GET /racingteams/1

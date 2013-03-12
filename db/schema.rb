@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305132510) do
+ActiveRecord::Schema.define(:version => 20130312142932) do
 
   create_table "authors", :force => true do |t|
     t.string   "username",         :null => false
@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(:version => 20130305132510) do
     t.string   "salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-  end
-
-  create_table "clubsessions", :force => true do |t|
-    t.text     "audience"
-    t.text     "session_info"
-    t.text     "datetime"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "news", :force => true do |t|
@@ -57,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20130305132510) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "statuses", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "racingteam_id"
@@ -66,22 +65,6 @@ ActiveRecord::Schema.define(:version => 20130305132510) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.text     "firstname"
-    t.text     "lastname"
-    t.text     "street"
-    t.text     "city"
-    t.text     "postcode"
-    t.text     "county"
-    t.text     "mobile"
-    t.text     "telephone"
-    t.text     "email"
-    t.text     "username"
-    t.text     "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,5 +1,5 @@
 <%= Navigation("racingteam") %>
-
+<% content_for :head, auto_discovery_link_tag(:atom, racingteams_url(format: "atom")) %>
 <div class="content">
 	<h1>Do you want to race?</h1>
 	<p>
