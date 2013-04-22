@@ -2,7 +2,13 @@ class RacingteamsController < ApplicationController
   # GET /racingteams
   # GET /racingteams.json
   def index
-    @racingteams = Racingteam.all
+    
+    if(params[:search])
+      searchData = "%"+params[:search]+"%"
+      @racingteams = Racingteam.where{title =~ searchData}
+    else
+      @racingteams = Racingteam.all
+    end
 
     # respond_to do |format|
       # format.html # index.html.erb

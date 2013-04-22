@@ -1,0 +1,2 @@
+module ClubsessionsHelper
+end

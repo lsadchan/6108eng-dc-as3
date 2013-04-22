@@ -1,5 +1,9 @@
 <%= Navigation("home") %>
-
+<% if notice!=nil %>
+<div id="success" class="alert alert-success">
+	<%= notice %>
+</div>
+<% end %>
 <div id="new-articles" class="carousel slide">
 	<!-- Carousel items -->
 	<div class="carousel-inner">
@@ -39,6 +43,19 @@
 <div class="content">
 	<div class="row-fluid">
 		<div class="span8">
+			<% @doc %>
+			<hr/>
+			<center>
+				<img src="../../assets/yahoo.png" alt="yahoo icon" />
+				<strong>Weather Update: </strong>
+				<%= @doc.elements['/rss/channel/yweather:location/@city'] %>
+				&nbsp;,&nbsp;&nbsp;Temperature:
+				<%= @doc.elements['/rss/channel/item/yweather:condition/@temp'] %>
+				&deg;C&nbsp;,&nbsp;&nbsp;Wind Speed:
+				<%= @doc.elements['/rss/channel/yweather:wind/@speed'] %>
+				km/h
+			</center>
+			<hr/>
 			<% @news.each do |news| %>
 			    <h4><%= news.title %></h4>
 			    <p><%= news.body.html_safe %></p>
@@ -50,16 +67,19 @@
 		<div class="span4">
 			<table class="table table-condensed">
 			  <tr>
+			  	<script type="text/javascript"> moWWidgetParams="moAllowUserLocation:false~moBackgroundColour:white~moColourScheme:black~moDays:3~moDomain:www.metoffice.gov.uk~moFSSI:350283~moListStyle:vertical~moMapDisplay:none~moShowFeelsLike:true~moShowUV:true~moShowWind:true~moSpecificHeight:250~moSpecificWidth:300~moSpeedUnits:M~moStartupLanguage:en~moTemperatureUnits:C~moTextColour:black~moGridParams:weather,temperature,wind,feelslike,uv~"; </script><script type="text/javascript" src="http://www.metoffice.gov.uk/public/pws/components/yoursite/loader.js"> </script>
+			  </tr>
+			  <tr>
 			    <th>Session</th>
 			    <th>Start Time</th>
 			    <th>End Time</th>
 			  </tr>
 			
-			<% @sessions.each do |session| %>
+			<% @clubsessions.each do |clubsession| %>
 			  <tr>
-			    <td><%= session.sessioninfo %></td>
-			    <td><%= session.starttime %></td>
-			    <td><%= session.endtime %></td>
+			    <td><%= clubsession.sessioninfo %></td>
+			    <td><%= clubsession.starttime %></td>
+			    <td><%= clubsession.endtime %></td>
 			  </tr>
 			<% end %>
 			</table>

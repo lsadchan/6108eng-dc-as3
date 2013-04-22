@@ -16,30 +16,29 @@
   <%= yield :head %>
 </head>
 <body>
-	<div class="sidebar">
+	<!-- <div class="sidebar">
 		<h4>Tags</h4>
 		<hr/>
-	</div>
+	</div> -->
 	<div class="wrapper">
 		<div class="header">
-			<form class="input-append search-bar">
-				<input class="span3 search-query" type="text" name="search" placeholder="Search" />
+			<form method="get" action="/racingteams#index" class="input-append search-bar">
+				<input class="span3 search-query" type="text" name="search" placeholder="Search Events..." />
 				<button id="search-btn" class="btn btn-link" name="search-btn" type="submit"><i class="icon-search"></i></button>
 			</form>
-			<h1>Oval Ski Club</h1>
+			<h1 id="logo" >
+				<% if logged_in? %>
+			      <%= "Oval Ski Club  |  #{current_user.name}" %>
+			    <% else %>
+			    	<%= "Oval Ski Club" %>
+			    <% end %>	
+			</h1>
 		</div>
 		<%= yield %>
 		<div class="footer">
 			<a href="/welcome/faqs">FAQs</a><a>|</a><a href="/welcome/aboutus">About Us</a><a>|</a><a href="/welcome/contactus">Contact Us</a>
 			<p><%= link_to image_tag('feedSmall.png'), racingteams_url(format: :atom) %></p>
-			<p>
-				© OSC 2013 &nbsp; | &nbsp;
-				<% if logged_in? %>
-			      <%= "Logged in as #{current_user.username}" %>
-			    <% else %>
-			      Logged out
-			    <% end %>			    
-		    </p>
+			<p>© OSC 2013</p>
 		</div>
 	</div>
 </body>

@@ -8,11 +8,16 @@
 	<% end %>
 	<h4> <%= @racingteam.title %> </h4>
 	<div class="para-wrap">
-	<p><%= @racingteam.body.html_safe %></p>
+	<p><%= @racingteam.body.try(:html_safe) %></p>
 	<% if @racingteam.image.exists? %>
-		<p><%= image_tag @racingteam.image.url(:thumb) %></p>
+		<p><%= image_tag @racingteam.image.url(:thumb), :class => 'photo-thumb' %></p>
 	<% end %>
-	<p><%= tag_links(@racingteam.tags) %></p>
+	<p>
+		<% @tags = @racingteam.tag_list.split(',') %>
+		<% @tags.each do |t| %>
+		<span class="label label-info" ><%= t %></span>
+		<% end %>
+	</p>
 	</div>
 	<br/>
 	<%= link_to 'Edit', edit_racingteam_path(@racingteam), :class  => "blue-pill" %>

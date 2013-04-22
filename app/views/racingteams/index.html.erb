@@ -1,6 +1,12 @@
 <%= Navigation("racingteam") %>
 <% content_for :head, auto_discovery_link_tag(:atom, racingteams_url(format: "atom")) %>
 <div class="content">
+	<% if notice!=nil %>
+	<div class="alert alert-success">
+		<%= notice %>
+	</div>
+	<% end %>
+	<% if params[:search] == nil %>
 	<h1>Do you want to race?</h1>
 	<p>
 		All members of the ski club are eligible to race. It's a great way to improve your skiing so if you are interested in racing then contact Tony, or any member of the team, who will provide you with the information you need.
@@ -13,10 +19,23 @@
 		We have members who race in the National league at various ski slopes across the country . We also organise teams to race at Stoke (in the summer), Sheffield (in the winter) and Pendle (also in the winter). Details for these local races can be found below.
 	</p>
 	<br/>
+	<% end %>
+	
 	<% @racingteams.each do |racingteam| %>
+	<div class="article-wrap">
 	<h3><%= racingteam.title %></h3>
-	<p><%= racingteam.body.html_safe %></p>
-	<p class="label label-info"><%= racingteam.tag_list %></p>
+	<p><%= racingteam.body.try(:html_safe) %></p>
+	
+	<% if racingteam.image.exists? %>
+	<%= image_tag racingteam.image.url(:thumb), :class => 'photo-thumb' %>
+	<% end %>
+	<p>
+		<% @tags = racingteam.tag_list.split(',') %>
+		<% @tags.each do |t| %>
+		<span class="label label-info" ><%= t %></span>
+		<% end %>
+	</p>
+	</div>
 	<hr/>
 	<%= link_to 'Show', racingteam %> | 
 	<%= link_to 'Edit', edit_racingteam_path(racingteam) %> |  

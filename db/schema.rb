@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312142932) do
+ActiveRecord::Schema.define(:version => 20130420233032) do
 
   create_table "authors", :force => true do |t|
     t.string   "username",         :null => false
@@ -20,6 +20,30 @@ ActiveRecord::Schema.define(:version => 20130312142932) do
     t.string   "salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "clubsessions", :force => true do |t|
+    t.string   "audience"
+    t.text     "sessioninfo"
+    t.text     "starttime"
+    t.text     "endtime"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "fbusers", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "galleries", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "news", :force => true do |t|

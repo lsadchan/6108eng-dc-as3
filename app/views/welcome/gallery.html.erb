@@ -1,0 +1,45 @@
+<%= Navigation("gallery") %>
+
+<div class="content">
+	<img src="../../assets/flickr.png" id="flickr-ico" />
+	<div id="new-articles" class="carousel slide">
+		<!-- Carousel items -->
+		<div class="carousel-inner">
+			<%  
+				@active = 'active' 
+				@i = 0
+			%>
+			<% @photo_src.each do |src| %>
+				<div class="<%= @active %> item">
+					<%= image_tag(src, :border => 0, :class => 'gallery-img') %>
+					<div class="carousel-caption">
+						<h3><%= @photo_titles[@i] %></h3>
+					</div>
+				</div>
+			<% @active = nil %>
+			<%	@i+1 %>
+			
+			<% end %>
+		</div>
+		<!-- Carousel nav -->
+		<a class="carousel-control left" href="#new-articles" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#new-articles" data-slide="next">&rsaquo;</a>
+	</div>
+	<br/>
+	<%= form_for :gallery, :html=>{:multipart=>true}, :url=>"/welcome/photo_upload" do |f| %>
+	<%= f.text_field :title, :placeholder => 'Title' %>
+	<%= f.text_field :description, :placeholder => 'Description' %>
+	<%= f.file_field :photo %>
+	<%= f.submit "Upload", :id => "upload-photo", :class => 'blue-pill' %>
+	<% end %>
+	<br/>
+	<% @photos.each do |p| %> 
+		<%= link_to(image_tag(p[3].source, :class => 'flickr_photo', :border => 0, :size => '240x180'), p[3].url) %>
+	<% end %>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('.carousel').carousel('cycle',{interval:3000}); //Load Welcome Carousel
+});
+</script>

@@ -1,1 +1,9 @@
-Database Structure PDF is in the DOC folder.
+- XML ATOM Feed for EVENTS (Racingteams) page. This can be fetched by using the RSS FEED icon in the footer of the website.
+
+- Major AJAX features included are FAQs refinement search bar within the FAQs page, login box.
+
+- Gallery page is powered by Flickr and is controlled by the Flickr API with the assistance of the Flickraw gem. This will upload photos to Flickr and fetch photos from a set Flickr account.
+
+- Users can sign in with a pre-registered user account OR via their Facebook account.
+
+- Some testing using Capybara have been attempted.

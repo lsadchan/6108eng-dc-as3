@@ -20,10 +20,25 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "rspec-rails", :group => [:test, :development]
+
+group :test do
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+end
+
 gem 'jquery-rails'
 
 gem 'paperclip'
 gem 'sorcery'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem 'flickraw'
+
+gem 'squeel'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

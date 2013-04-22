@@ -34,4 +34,7 @@ Osc::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # FACEBOOK_KEY = '164069230424884'
+  # FACEBOOK_SECRET = 'cf309e88200db171c85b9577a85ab660'
 end

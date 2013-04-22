@@ -4,15 +4,24 @@ class AuthorSessionsController < ApplicationController
   end
  
   def create
-    @author = login(params[:username], params[:password])
-    if @author
-      redirect_back_or_to(racingteams_path, message: 'Logged in successfully.')
+    @fblogin = false;
+    
+    if params[:username] != nil
+      @author = login(params[:username], params[:password])
     else
-      flash.now.alert = "Login failed."
-      render action: :new
+      omniauth = Fbuser.omniauth(env["omniauth.auth"])
+      @author = omniauth.id
+      session[:user_id] = omniauth.id
+      @fblogin = true;
+    end
+    
+    if @author
+      redirect_back_or_to(root_path, notice: 'You have sucessfully logged in.')
+    else
+      redirect_to(:login, notice: 'Login unsuccessfull. Please try again.')
     end
   end
- 
+
   def destroy
     logout
     redirect_to(root_path, message: 'Logged out!')
